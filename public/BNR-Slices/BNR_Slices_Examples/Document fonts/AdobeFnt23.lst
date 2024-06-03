@@ -1,0 +1,63 @@
+%!Adobe-FontList 1.23
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/karlijnpustjens/Desktop/BNR_23September/SLICES/D8_BNR_SLICES_EXAMPLES/Document fonts/AdobeFnt23.lst
+FileLength:1299
+FileModTime:686756209
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:CircularPro-Book
+FamilyName:Circular Pro
+StyleName:Book
+MenuName:Circular Pro Book
+StyleBits:0
+WeightClass:450
+WidthClass:5
+AngleClass:0
+FullName:Circular Pro Book
+WritingScript:Roman
+OutlineFileName:/Users/karlijnpustjens/Desktop/BNR_23September/SLICES/D8_BNR_SLICES_EXAMPLES/Document fonts/CircularPro-Book.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:87144
+FileModTime:387409306
+NameArray:0,Mac,4,Circular Pro Book
+NameArray:0,Win,1,Circular Pro Book
+NameArray:0,Win,16,Circular Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:CircularPro-Medium
+FamilyName:Circular Pro
+StyleName:Medium
+MenuName:Circular Pro Medium
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:0
+FullName:Circular Pro Medium
+WritingScript:Roman
+OutlineFileName:/Users/karlijnpustjens/Desktop/BNR_23September/SLICES/D8_BNR_SLICES_EXAMPLES/Document fonts/CircularPro-Medium.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:95212
+FileModTime:387409330
+NameArray:0,Mac,4,Circular Pro Medium
+NameArray:0,Win,1,Circular Pro Medium
+NameArray:0,Win,16,Circular Pro
+%EndFont
+
