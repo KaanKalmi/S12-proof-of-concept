@@ -13,8 +13,10 @@ app.listen(app.get('port'), function () {
  console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
-// path naar Database maken
-// Route naar homepage
-// MP3 speler serverside inladen maybe??? (performance)
-// MP3: http://playerservices.streamtheworld.com/api/livestream-redirect/BNR_BUSINESS_BEATS.mp3
-// Artikels: https://api.mobile.bnr.nl/v1/articles
+app.get('/', req res) function{
+ res.render('index', iets)
+ console.log('if you see this message the page loaded correctly')
+}
+
+const mp3 = http://playerservices.streamtheworld.com/api/livestream-redirect/BNR_BUSINESS_BEATS.mp3,
+      article = https://api.mobile.bnr.nl/v1/articles;
