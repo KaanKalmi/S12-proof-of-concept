@@ -18,7 +18,7 @@ app.listen(app.get('port'), function () {
 
 // BASIS ENDPOINTS
 const apiUrl = 'https://fdnd-agency.directus.app/items'
-const imagesData =  await fetchJson(apiUrl + '/fabrique_art_objects')
+const imagesData =  await fetchJson(apiUrl + '/fabrique_art_objects/?fields=*,image.height,image.width,image.id')
 console.log(imagesData.data)
 
 // ROUTES

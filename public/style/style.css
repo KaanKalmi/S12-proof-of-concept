@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --secondary-clr: #f9ff1e;
+}
+
+html {
+    font-family: "Cairo", sans-serif;
+}
+
+body {
+    height: 100vh;
+
+}
+
+
+img {
+    max-width: 100%;
+    height: auto; 
+}
+
+
+button {
+    position: fixed;
+    top: 0;  
+}
+
+
+
+
+main {
+    height: 100%;
+    width: 100%;
+
+    ul {
+        /* display: flex; */
+        gap: .5em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;  
+        position: relative;
+        overflow: auto;
+        justify-content: space-between;
+    
+        &::before {
+            content: '';
+            background: linear-gradient(transparent, white);
+            position: absolute;
+            height: 10%;
+            width: 100%;
+            bottom: 0;
+        } 
+
+        li {
+            list-style: none;
+            margin-bottom: .5em;
+        
+            
+        }
+    }
+}
+
+
+
+
+
+
+/* TABLET */
+@media screen and (min-width:40rem) {
+    main ul {
+        display: block;
+       -webkit-column-count: 17em;
+       -moz-column-count: 17em;
+       column-count: 4;
+       -webkit-column-gap: .5em;
+       -moz-column-gap: .5em;
+       column-gap: .5em;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width:60rem) {
+    main ul {
+        column-count: 7;
+     }
+}

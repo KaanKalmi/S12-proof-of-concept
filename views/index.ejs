@@ -1,5 +1,77 @@
 <%- include('partials/head') %>
-<header></header>
-<main></main>
+<header>
+    
+</header>
+<main>
+    <nav>
+
+    </nav>
+    <ul>
+        <% images.forEach(function(image) { %>
+            <li>
+                <a href="#">
+                    <picture>
+                        <!-- <source srcset="https://fdnd-agency.directus.app/assets/<%= image.image.id %>?format=avif" type="image/avif" height="<%= image.image.height %>" width="<%= image.image.width %>>
+                        <source srcset="https://fdnd-agency.directus.app/assets/<%= image.image.id %>?format=webp" type="image/webp" height="<%= image.image.height %>" width="<%= image.image.width %>> -->
+                        <img src="https://fdnd-agency.directus.app/assets/<%= image.image.id %>" alt="<%= image.title %>" height="<%= image.image.height %>" width="<%= image.image.width %>">
+                    </picture>
+                </a>
+            </li>
+        <% }) %>
+        <% images.forEach(function(image) { %>
+            <li>
+                <a href="#">
+                    <picture>
+                        <!-- <source srcset="https://fdnd-agency.directus.app/assets/<%= image.image.id %>?format=avif" type="image/avif" height="<%= image.image.height %>" width="<%= image.image.width %>>
+                        <source srcset="https://fdnd-agency.directus.app/assets/<%= image.image.id %>?format=webp" type="image/webp" height="<%= image.image.height %>" width="<%= image.image.width %>> -->
+                        <img src="https://fdnd-agency.directus.app/assets/<%= image.image.id %>" alt="<%= image.title %>" height="<%= image.image.height %>" width="<%= image.image.width %>" loading="lazy">
+                    </picture>
+                </a>
+            </li>
+        <% }) %>
+        <% images.forEach(function(image) { %>
+            <li>
+                <a href="#">
+                    <picture>
+                        <!-- <source srcset="https://fdnd-agency.directus.app/assets/<%= image.image.id %>?format=avif" type="image/avif" height="<%= image.image.height %>" width="<%= image.image.width %>>
+                        <source srcset="https://fdnd-agency.directus.app/assets/<%= image.image.id %>?format=webp" type="image/webp" height="<%= image.image.height %>" width="<%= image.image.width %>> -->
+                        <img src="https://fdnd-agency.directus.app/assets/<%= image.image.id %>" alt="<%= image.title %>" height="<%= image.image.height %>" width="<%= image.image.width %>" loading="lazy">
+                    </picture>
+                </a>
+            </li>
+        <% }) %>
+        <% images.forEach(function(image) { %>
+            <li>
+                <a href="#">
+                    <picture>
+                        <!-- <source srcset="https://fdnd-agency.directus.app/assets/<%= image.image.id %>?format=avif" type="image/avif" height="<%= image.image.height %>" width="<%= image.image.width %>>
+                        <source srcset="https://fdnd-agency.directus.app/assets/<%= image.image.id %>?format=webp" type="image/webp" height="<%= image.image.height %>" width="<%= image.image.width %>> -->
+                        <img src="https://fdnd-agency.directus.app/assets/<%= image.image.id %>" alt="<%= image.title %>" height="<%= image.image.height %>" width="<%= image.image.width %>" loading="lazy">
+                    </picture>
+                </a>
+            </li>
+        <% }) %>
+        <% images.forEach(function(image) { %>
+            <li>
+                <a href="#">
+                    <picture>
+                        <!-- <source srcset="https://fdnd-agency.directus.app/assets/<%= image.image.id %>?format=avif" type="image/avif" height="<%= image.image.height %>" width="<%= image.image.width %>>
+                        <source srcset="https://fdnd-agency.directus.app/assets/<%= image.image.id %>?format=webp" type="image/webp" height="<%= image.image.height %>" width="<%= image.image.width %>> -->
+                        <img src="https://fdnd-agency.directus.app/assets/<%= image.image.id %>" alt="<%= image.title %>" height="<%= image.image.height %>" width="<%= image.image.width %>" loading="lazy">
+                    </picture>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+</main>
 <footer></footer>
+<button type="button">Load more</button>
+
+<!-- <button class="left">left</button>
+<button class="top">top</button>
+<button class="right">right</button>
+<button class="bottom">bottom</button>
+<ul>
+    <li>1</li>
+</ul> -->
 <%- include('partials/foot') %>
