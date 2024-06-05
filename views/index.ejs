@@ -1,3 +1,19 @@
     <%- include('partials/head') %>
+    <%- include('partials/radio') %>
+    <h2> Nieuws</h2>
+    <% articles.forEach(article => { %>
+        <article>
+            <a href="<%=article.shareURL%>" target="_blank">
+            <picture>
+                <source src="<%= article.photo.URL %>?height=125&width=125" type="image/avif">
+                <source src="<%= article.photo.URL %>?height=125&width=125" type="image/webp">
+                <img src="<%= article.photo.URL %>" alt="" height=125 width=125>
+            </picture>
+            <h3><%= article.title %></h3>
+            <p><%= article.author %></p>
+            <small><%= article.publishedAt%></small>
+        </a>
+        </article>
+    <% }) %>
 </body>
 </html>

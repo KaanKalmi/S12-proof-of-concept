@@ -2,7 +2,7 @@
     width: 400px;
     margin: 20px;
 
-    #audio { display: none; }
+    #audio{}
 
     .controls {
         display: flex;
