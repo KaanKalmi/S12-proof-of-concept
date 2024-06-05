@@ -24,8 +24,12 @@ img {
 }
 
 button {
-    position: fixed;
-    top: 0;  
+    background-color: #464646;
+    color: white;
+    padding: 1em;
+    outline: none;
+    border: none;
+    text-wrap: nowrap;
 }
 
 header nav {
@@ -121,6 +125,39 @@ main {
         li {
             list-style: none;       
         }
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 50%;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: scroll;
+
+    left: 0;
+    right: 0;
+    gap: 1em;
+    text-transform: uppercase;
+
+    ul {
+        display: flex;
+        gap: 1em;
+        list-style: none;
+        margin: auto;
+    }
+
+    label {
+        background-color: white;
+        border: 1px solid grey;
+        padding: 1em;
+    }
+
+    input[type="search"] {
+        width: 100%;
     }
 }
 
