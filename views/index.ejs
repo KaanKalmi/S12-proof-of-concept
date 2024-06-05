@@ -1,8 +1,9 @@
     <%- include('partials/head') %>
     <%- include('partials/radio') %>
     <h2> Nieuws</h2>
+    <section class="news">
     <% articles.forEach(article => { %>
-        <article>
+        <article class="article">
             <a href="<%=article.shareURL%>" target="_blank">
             <picture>
                 <source src="<%= article.photo.URL %>?height=125&width=125" type="image/avif">
@@ -15,5 +16,6 @@
         </a>
         </article>
     <% }) %>
+</section>
 </body>
 </html>

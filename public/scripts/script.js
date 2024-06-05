@@ -8,10 +8,10 @@ let isPlaying = false;
 playPauseButton.addEventListener("click", () => {
     if (isPlaying) {
         audio.pause();
-        playPauseButton.textContent = "Play";
+        playPauseButton.textContent = "Speel af";
     } else {
         audio.play();
-        playPauseButton.textContent = "Pause";
+        playPauseButton.textContent = "Pauzeer";
     }
     isPlaying = !isPlaying;
 });

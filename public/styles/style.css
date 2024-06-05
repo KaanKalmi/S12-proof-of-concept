@@ -1,8 +1,27 @@
+@font-face {
+    font-family: 'PJS';
+    src: url(/BNR-Typography/PJS/PlusJakartaSans-Italic-VariableFont_wght.ttf) format('truetype');
+}
+
+:root{
+    --BNR-yellow:#FFD200;
+    --BNR-black:#000000;
+    --BNR-grey:#D7D2CB;
+    --font: 'PJS', sans-serif;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--BNR-grey);
+    color: var(--BNR-black);
+    margin: 0;
+}
+
 .audio-player {
     width: 400px;
     margin: 20px;
 
-    #audio{}
+    #audio{visibility: hidden; width: 0; height: 0;}
 
     .controls {
         display: flex;
@@ -15,3 +34,4 @@
         margin-top: 10px;
     }
 }
+
