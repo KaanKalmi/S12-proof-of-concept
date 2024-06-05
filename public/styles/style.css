@@ -1,0 +1,17 @@
+.audio-player {
+    width: 400px;
+    margin: 20px;
+
+    #audio { display: none; }
+
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #current-time, #total-time {
+        margin-top: 10px;
+    }
+}
