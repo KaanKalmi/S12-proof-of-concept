@@ -271,16 +271,14 @@ footer input:placeholder-shown {
         display: none;
     }
 
-    
-
     main ul {
         display: block;
-       -webkit-column-count: 17em;
-       -moz-column-count: 17em;
-       column-count: 4;
-       -webkit-column-gap: .5em;
-       -moz-column-gap: .5em;
-       column-gap: .5em;
+        -webkit-column-count: 17em;
+        -moz-column-count: 17em;
+        column-count: 4;
+        -webkit-column-gap: .5em;
+        -moz-column-gap: .5em;
+        column-gap: .5em;
     }
 }
 
@@ -296,7 +294,7 @@ footer input:placeholder-shown {
     header ul {
         gap: 2em;
     }
-    
+
     main ul {
         column-count: 7;
      }
