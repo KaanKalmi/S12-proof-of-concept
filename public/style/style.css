@@ -10,7 +10,7 @@
 
 *:lang(ar) {
     text-align: right;
-    color: red;
+    /* color: red; */
     direction: rtl;
     -webkit-locale: "ar";
 }
@@ -73,7 +73,11 @@ header nav {
     padding: 5px 2em 5px 5px;
     text-transform: uppercase;
     font-weight: bold;
-    height: 70px;         
+    height: 70px; 
+    
+    &:lang(ar) {
+        padding: 5px 5px 5px 2em;
+    }
 }
 
 header ul {
@@ -125,6 +129,10 @@ header .tickets {
     }
 }
 
+header .tickets a:hover {
+    text-decoration: none;
+}
+
 main {
     height: 100%;
     width: 100%;
@@ -170,10 +178,6 @@ footer {
 }
 
 footer ul {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     gap: 1em;
