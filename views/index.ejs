@@ -64,19 +64,44 @@
 <footer>
     <ul>
         <li>
-            <button>All objects</button>
+            <% if (current == '/en') { %> 
+                <button>All objects</button>
+            <% } %> 
+            <% if (current == '/ar') { %> 
+                <button>جميع الكائنات</button>  
+            <% } %>
         </li>
         <li>
-            <button>Pottery</button>
+            <% if (current == '/en') { %> 
+                <button>Pottery</button>
+            <% } %> 
+            <% if (current == '/ar') { %> 
+                <button>الفخار</button>
+            <% } %>
         </li>
         <li>
-            <button>Islamic art</button>
+            <% if (current == '/en') { %> 
+                <button>Islamic art</button>
+            <% } %> 
+            <% if (current == '/ar') { %> 
+                <button>الفن الإسلامي</button>
+            <% } %>
         </li>
         <li>
-            <button>Tapestry</button>
+            <% if (current == '/en') { %> 
+                <button>Tapestry</button>
+            <% } %> 
+            <% if (current == '/ar') { %> 
+                <button>نسيج</button>
+            <% } %>
         </li>
         <li>
-            <button>Glass</button>
+            <% if (current == '/en') { %> 
+                <button>Glass</button>
+            <% } %> 
+            <% if (current == '/ar') { %> 
+                <button>زجاج</button>
+            <% } %>
         </li>
     </ul>
     <label>
