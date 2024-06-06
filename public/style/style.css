@@ -4,6 +4,22 @@
     box-sizing: border-box;
 
     transition: all .2s ease-out;
+
+    
+}
+
+*:lang(ar) {
+    text-align: right;
+    color: red;
+    direction: rtl;
+    -webkit-locale: "ar";
+}
+
+*:lang(en) {
+    text-align: left;
+    color: blue;
+    direction: ltr;
+    -webkit-locale: "en";
 }
 
 :root {
@@ -60,9 +76,19 @@ header nav {
         cursor: pointer;
         line-height: 1.25em;
         display: inline-block;
+        text-align: justify;
 
         p {
             width: 100%;
+            text-align: left;
+            text-align: justify;
+            
+            &:lang(ar) {
+                unicode-bidi: isolate;
+                text-align: justify;
+                
+            }
+            
         }
         
 
