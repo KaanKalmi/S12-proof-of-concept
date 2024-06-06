@@ -36,6 +36,14 @@ body {
 
 /* BASIC ELEMENTS --------------------------------------------------------------- BASIC ELEMENTS -------------------------------------------------------------------------------*/
 
+.mobile-hidden {
+    display: none;
+}
+
+.tablet-hidden {
+    display: none;
+}
+
 img {
     max-width: 100%;
     height: auto; 
@@ -59,12 +67,11 @@ header nav {
     justify-content: space-between;
     background-color: white;
     align-items: center;
-    padding: 0.1rem;
     border-bottom: 0.1rem solid black;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 100;
     width: 100%;
     padding: 5px 2em 5px 5px;
     text-transform: uppercase;
@@ -83,7 +90,7 @@ header ul {
     justify-content: center;
     align-items: center;
     list-style: none;
-    gap: 2em;
+    gap: 1em;
 }
 
 header a {
@@ -256,6 +263,16 @@ footer input:placeholder-shown {
 
 /* TABLET */
 @media screen and (min-width:40rem) {
+    .mobile-hidden {
+        display: block;
+    }
+
+    .tablet-hidden {
+        display: none;
+    }
+
+    
+
     main ul {
         display: block;
        -webkit-column-count: 17em;
@@ -269,6 +286,17 @@ footer input:placeholder-shown {
 
 /* DESKTOP */
 @media screen and (min-width:60rem) {
+    .mobile-hidden {
+        display: block;
+    }
+
+    .tablet-hidden {
+        display: block;
+    }
+    header ul {
+        gap: 2em;
+    }
+    
     main ul {
         column-count: 7;
      }

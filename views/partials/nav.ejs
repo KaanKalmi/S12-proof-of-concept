@@ -9,33 +9,33 @@
         <% } %>
     </a>
     <ul>
-        <li>
+        <li class="tablet-hidden">
             <a href="">
                 <p lang="ar" dir="rtl">قــصــصــنــا</p>
                 <p lang="en" dir="ltr">Stories</p>
             </a>
         </li>
-        <li>
+        <li class="tablet-hidden">
             <a href="">
                 <p lang="ar" dir="rtl">الـفـعــالــيــات</p> 
                 <p lang="en" dir="ltr">What's on</p> 
             </a>
         </li>
-        <li>
+        <li class="tablet-hidden">
             <a href="">
                 <p lang="ar" dir="rtl">زيـــارة</p> 
                 <p lang="en" dir="ltr">Visit</p> 
             </a>
         </li>
-        <li class="tickets">
+        <li class="tickets mobile-hidden">
             <% if (current == '/en') { %> 
                 <a href="/ar"  lang="ar" dir="rtl">Tickets</a> 
             <% } %> 
             <% if (current == '/ar') { %> 
                 <a href="/" lang="en" dir="ltr">التذاكر</a>  
             <% } %>
-            </li>
-        <li>
+        </li>
+        <li class="mobile-hidden">
             <a href="" class="icon">
                 <svg viewBox="-10 -10 50 50" xml:space="preserve" height="30" xmlns="http://www.w3.org/2000/svg"><path d="M13 29.3c-3.1-3.8-9.9-12.9-9.9-18C3.1 5 8.1 0 14.4 0c6.2 0 11.3 5 11.3 11.3 0 5.1-6.9 14.3-9.9 18-.8.9-2.1.9-2.8 0zM14.4 15a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6z"></path></svg>
                 <% if (current == '/en') { %> 
@@ -47,8 +47,8 @@
 
                 
             </a>
-            </li>
-        <li>
+        </li>
+        <li class="mobile-hidden">
             <% if (current == '/en') { %> 
                 <a href="/ar"  lang="ar" dir="rtl">العربية</a> 
             <% } %> 
