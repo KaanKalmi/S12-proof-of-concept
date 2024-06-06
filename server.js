@@ -24,6 +24,14 @@ console.log(imagesData.data)
 // ROUTES
 app.get('/', function (request, response) {  
     response.render('index', {
+        current: '/en', 
         images: imagesData.data
+    })
+})
+
+app.get('/ar', function (request, response) {  
+    response.render('index', {
+        current: '/ar', 
+        images: imagesData.data        
     })
 })
