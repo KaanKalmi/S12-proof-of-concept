@@ -45,22 +45,7 @@ a {
     color: black;
 }
 
-button {
-    background-color: #464646;  
-    color: white;
-    padding: .5em 1em;
-    outline: none;
-    text-wrap: nowrap;
-    border: 1px solid #464646;
-    text-transform: uppercase;
-    font-size: .85em;
 
-    &:hover {
-        color: #464646;
-        background: white;
-        border: 1px solid #464646;
-    }
-}
 
 picture {
     display: block;
@@ -200,14 +185,73 @@ footer ul {
     margin: auto;
 }
 
-footer label {
+footer ul button {
+    background-color: #464646;  
+    color: white;
+    padding: .5em 1em;
+    outline: none;
+    text-wrap: nowrap;
+    border: 1px solid #464646;
+    text-transform: uppercase;
+    font-size: .85em;
+
+    &:hover {
+        color: #464646;
+        background: white;
+        border: 1px solid #464646;
+    }
+}
+
+footer form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
     background-color: white;
     border: 1px solid grey;
     padding: 1em;
+    
+}
+
+footer label {
+    width: 100%;
+    /* display: inline-block; */
+    position: relative;
+    &::after {
+        content: '';
+        background-color: #464646;
+        height: 2px;
+        width: calc(100% + 25px);
+        display: block;
+        position: absolute;
+    }
+    
 }
 
 footer input[type="search"] {
     width: 100%;
+    border: none;
+    font-size: 1.5em;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+form button {
+    width: fit-content;
+    height: fit-content;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+form button svg {
+    color: #464646;
+}
+
+footer input:placeholder-shown {
+    text-transform: uppercase;
 }
 
 /* TABLET */
