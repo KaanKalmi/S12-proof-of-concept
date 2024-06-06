@@ -22,20 +22,49 @@
                 <p lang="en" dir="ltr">Visit</p> 
             </a>
         </li>
-        <li class="tickets">Tickets</li>
+        <li class="tickets">
+            <% if (current == '/en') { %> 
+                <a href="/ar"  lang="ar" dir="rtl">Tickets</a> 
+            <% } %> 
+            <% if (current == '/ar') { %> 
+                <a href="/" lang="en" dir="ltr">التذاكر</a>  
+            <% } %>
+            </li>
         <li>
             <a href="" class="icon">
                 <svg viewBox="-10 -10 50 50" xml:space="preserve" height="30" xmlns="http://www.w3.org/2000/svg"><path d="M13 29.3c-3.1-3.8-9.9-12.9-9.9-18C3.1 5 8.1 0 14.4 0c6.2 0 11.3 5 11.3 11.3 0 5.1-6.9 14.3-9.9 18-.8.9-2.1.9-2.8 0zM14.4 15a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6z"></path></svg>
-                Venues
+                <% if (current == '/en') { %> 
+                    Venues
+                <% } %> 
+                <% if (current == '/ar') { %> 
+                  المواقع
+                <% } %>
+
+                
             </a>
             </li>
         <li>
-            <a <% if (current == '/en') { %> href="/ar" <% } %> <% if (current == '/ar') { %> href="/" <% } %> lang="ar" dir="rtl">العربية</a>
+            <% if (current == '/en') { %> 
+                <a href="/ar"  lang="ar" dir="rtl">العربية</a> 
+            <% } %> 
+            <% if (current == '/ar') { %> 
+                <a href="/" lang="en" dir="ltr">English</a>  
+            <% } %>
+
         </li>
         <li>
             <a href="" class="icon">
                 <svg height="30" shape-rendering="crispEdges" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M7 11.5h16v2H7z"></path><path d="M7 17.5h16v2H7z"></path></svg>
-                Menu
+                <% if (current == '/en') { %> 
+                    menu
+                <% } %> 
+                <% if (current == '/ar') { %> 
+                    قائمة
+                <% } %>
+
+                
+
+                
             </a>
         </li>
     </ul>
