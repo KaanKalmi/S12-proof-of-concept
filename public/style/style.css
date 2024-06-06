@@ -144,7 +144,6 @@ header .tickets a:hover {
 main {
     height: 100%;
     width: 100%;
-    
 }
 
 main ul {
@@ -170,14 +169,12 @@ main ul {
 footer {
     position: fixed;
     bottom: 0;
-    width: 50%;
-    margin: 2em auto;
+    width: 100%;
+    margin: auto;
     display: flex;
-
     flex-direction: column;
     justify-content: center;
     overflow: scroll;
-
     left: 0;
     right: 0;
     gap: 1em;
@@ -217,7 +214,6 @@ footer form {
     background-color: white;
     border: 1px solid grey;
     padding: 1em;
-    
 }
 
 footer label {
@@ -280,6 +276,11 @@ footer input:placeholder-shown {
         -moz-column-gap: .5em;
         column-gap: .5em;
     }
+
+    footer {
+        width: 80%;
+        margin: 2em auto;
+     }
 }
 
 /* DESKTOP */
@@ -297,5 +298,9 @@ footer input:placeholder-shown {
 
     main ul {
         column-count: 7;
+     }
+
+     footer {
+        width: 50%;
      }
 }
