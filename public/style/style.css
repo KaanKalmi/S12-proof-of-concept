@@ -4,7 +4,7 @@
     box-sizing: border-box;
 
     transition: all .2s ease-out;
-
+    font-family: "Cairo", sans-serif;
     
 }
 
@@ -46,17 +46,28 @@ a {
 }
 
 button {
-    background-color: #464646;
+    background-color: #464646;  
     color: white;
-    padding: 1em;
+    padding: .5em 1em;
     outline: none;
-    border: none;
     text-wrap: nowrap;
+    border: 1px solid #464646;
+    text-transform: uppercase;
+    font-size: .85em;
+
+    &:hover {
+        color: #464646;
+        background: white;
+        border: 1px solid #464646;
+    }
+}
+
+picture {
+    display: block;
 }
 
 
 /* HEADER -------------------------------------------------------------------- HEADER -------------------------------------------------------------------------------*/
-
 header nav {
     display: flex;
     flex-direction: row;
@@ -91,11 +102,12 @@ header ul {
 }
 
 header a {
-    all: unset;
+    /* all: unset; */
     cursor: pointer;
     line-height: 1.25em;
     display: inline-block;
     text-align: justify; 
+    text-decoration: none;
 
     &:hover {
         text-decoration: underline;
@@ -127,6 +139,10 @@ header .tickets {
         background-color: black;
         color: white;
     }
+
+    &:focus + a {
+        outline: 1px;
+    }
 }
 
 header .tickets a:hover {
@@ -136,7 +152,6 @@ header .tickets a:hover {
 main {
     height: 100%;
     width: 100%;
-
     
 }
 
