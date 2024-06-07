@@ -16,6 +16,7 @@ body {
     background-color: var(--BNR-grey);
     color: var(--BNR-black);
     margin: 0;
+    accent-color: var(--BNR-yellow);
 }
 
 header{
