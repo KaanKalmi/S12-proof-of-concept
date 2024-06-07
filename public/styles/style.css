@@ -8,7 +8,7 @@
     --BNR-black:#000000;
     --BNR-grey:#D7D2CB;
     --BNR-blue:#0095b3;
-    --font: 'PJS', sans-serif;
+    --font: 'PJS', helvetica, arial, serif;
 }
 
 body {
@@ -18,8 +18,22 @@ body {
     margin: 0;
 }
 
-h1{
-    text-align: center;
+header{
+    display: flex;
+    flex-direction: row;
+
+    img{
+        height: 122px;
+        width: 75px;
+        padding: 8px;
+        display: inline-block;
+    }
+
+    h1{
+        display: inline-block;
+        margin: auto;
+        text-align: center;
+    }
 }
 .audio-player {
     width: 100vw;
@@ -39,12 +53,13 @@ h1{
     }
 
     #play-pause-button{
-        background-color: var(--BNR-blue);
+        background-color: var(--BNR-yellow);
         border: none;
         padding: 20px;
         border-radius: 1000px;
         cursor: pointer;
         margin: auto;
+        animation: pulse 4s 1s infinite linear;
     }
 
     .controls {
@@ -58,6 +73,7 @@ h1{
 
         #volume-control {
             width: 80px;
+            height: 15px;
         }
     }
 
@@ -66,3 +82,11 @@ h1{
     }
 }
 
+@keyframes pulse{
+    0%, 50%, 100%{
+        transform: scale(1);
+    }
+    25%, 75%{
+        transform: scale(1.1);
+    }
+}
