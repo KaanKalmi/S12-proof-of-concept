@@ -7,7 +7,7 @@
     --BNR-yellow:#FFD200;
     --BNR-black:#000000;
     --BNR-grey:#D7D2CB;
-    --BNR-blue:hsla(190, 100%, 35%, 0.6);
+    --BNR-blue:#0095b3;
     --font: 'PJS', sans-serif;
 }
 
@@ -22,19 +22,22 @@ h1{
     text-align: center;
 }
 .audio-player {
-    width: 95vw;
-    height: 15vh;
+    width: 100vw;
+    height: 10vh;
     padding-block: 12px;
-    border:1px solid var(--BNR-black);
     border-radius: 4px;
     margin:auto;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--BNR-black);
+    color: var(--BNR-yellow);
 
-    .idk{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    .play-btn-container{
+        position: absolute;
+        margin: auto;
+        left: 40%;
     }
+
     #play-pause-button{
         background-color: var(--BNR-blue);
         border: none;
@@ -46,13 +49,20 @@ h1{
 
     .controls {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;
+        justify-content: end;
+        align-items: end;
+        position: absolute;
+        right: -10px;
+        bottom: 40px;
+        transform: rotate(-90deg);
+
+        #volume-control {
+            width: 80px;
+        }
     }
 
-    #current-time, #total-time {
-        margin-top: 10px;
+    #current-time {
+        margin-left: 10px;
     }
 }
 
