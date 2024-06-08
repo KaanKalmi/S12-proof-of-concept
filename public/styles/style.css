@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'PJS';
     src: url(/BNR-Typography/PJS/PlusJakartaSans-Italic-VariableFont_wght.ttf) format('truetype');
+    font-family: 'PJS';
 }
 
 :root{
@@ -12,11 +12,16 @@
 }
 
 body {
-    font-family: var(--font);
+    margin: 0;
     background-color: var(--BNR-grey);
     color: var(--BNR-black);
-    margin: 0;
     accent-color: var(--BNR-yellow);
+    font-family: var(--font);
+}
+
+h1{
+    margin: auto;
+    text-align: center;
 }
 
 header{
@@ -24,52 +29,53 @@ header{
     flex-direction: row;
 
     img{
-        height: 122px;
-        width: 75px;
-        padding: 8px;
         display: inline-block;
+        padding: 8px;
+        width: 75px;
+        height: 122px;
     }
 
-    h1{
-        display: inline-block;
-        margin: auto;
-        text-align: center;
-    }
 }
 .audio-player {
-    width: 100vw;
-    height: 10vh;
-    padding-block: 12px;
-    border-radius: 4px;
-    margin:auto;
     position: fixed;
     bottom: 0;
+    margin:auto;
     background-color: var(--BNR-black);
+    padding-top: 24px;
+    width: 100vw;
+    height: 10vh;
     color: var(--BNR-yellow);
 
+    h2{
+        font-size: 18px;
+        margin-top: -20px;
+        margin-bottom: 0;
+        margin-inline: 0;
+        text-align: left;
+    }
     .play-btn-container{
         position: absolute;
-        margin: auto;
         left: 40%;
+        margin: auto;
     }
 
     #play-pause-button{
-        background-color: var(--BNR-yellow);
-        border: none;
-        padding: 20px;
-        border-radius: 1000px;
+        animation: pulse 4s 1s infinite linear;
         cursor: pointer;
         margin: auto;
-        animation: pulse 4s 1s infinite linear;
+        border: none;
+        border-radius: 1000px;
+        background-color: var(--BNR-yellow);
+        padding: 16px;
     }
 
     .controls {
         display: flex;
-        justify-content: end;
-        align-items: end;
         position: absolute;
         right: -10px;
         bottom: 40px;
+        justify-content: end;
+        align-items: end;
         transform: rotate(-90deg);
 
         #volume-control {
@@ -79,7 +85,9 @@ header{
     }
 
     #current-time {
+        position: absolute;
         margin-left: 10px;
+        bottom: 10px;
     }
 }
 
@@ -91,3 +99,51 @@ header{
         transform: scale(1.1);
     }
 }
+
+.banner{
+    clip-path: polygon(0 0, 95% 0, 75% 100%, 0% 100%);
+    margin-top: 24px;
+    margin-bottom: 12px;
+    background: var(--BNR-yellow);
+    padding: 8px;
+
+    h3{
+        font-size: 24px;
+    }
+}
+.news{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-inline: 4px;
+
+    .article{
+        display: flex;
+        flex-direction: row;
+        margin: 8px;
+        border-block: 1px solid #00000025;
+        max-width: 450px;
+
+        a{
+            display: flex;
+            flex-direction: row;
+            max-width: 450px;
+            height: 125px;
+            color: var(--BNR-black);
+            text-decoration: none;
+
+            figure{
+                margin: 0;
+
+                img{
+                    width: 125px;
+                    height: 125px;
+                    object-fit: cover;
+                    image-rendering: optimizeQuality;
+                }
+        }
+        figcaption{
+            padding: 8px;
+        }
+    }
+}}
