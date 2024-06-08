@@ -12,7 +12,10 @@
                 srcset="<%= article.photo.URL %>?height=125&width=125" type="image/avif" 
                 srcset="<%= article.photo.URL %>?height=125&width=125" type="image/webp">
             </figure>
-            <figcaption><%= article.title %></figcaption>
+            <figcaption>
+                <%= article.title %>
+                <small> <%=article.author%> </small>
+            </figcaption>
         </a>
         </article>
     <% }) %>
