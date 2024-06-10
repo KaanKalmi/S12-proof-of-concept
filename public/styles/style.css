@@ -6,7 +6,8 @@
 @media (prefers-color-scheme: light) {
 :root {
     --accent: #FFD200;
-    --background: #D7D2CB;
+    --accent-light:#000;
+    --background: #F2F1F0;
     --text: #000000;
     --accent-text: #000;
     --font: 'PJS', helvetica, arial, serif;
@@ -14,11 +15,12 @@
 }
 
 body{
-    accent-color: var(--accent);
+    accent-color: var(--accent-light);
 }
 
 #play-pause-button{
-    background-color: var(--accent);
+    background-color: var(--accent-light);
+    color: var(--accent);
 }
 }
 
@@ -26,7 +28,7 @@ body{
     :root {
         --accent: #FFD200;
         --background: #171717;
-        --text: #D7D2CB;
+        --text: #F2F1F0;
         --accent-text: #000;
         --font: 'PJS', helvetica, arial, serif;
         --border:#ffd00025;
@@ -36,9 +38,10 @@ body{
         accent-color: var(--background);
     }
 
-    /* #play-pause-button{
-        background-color: var(--text);
-    } */
+     #play-pause-button{
+        background-color: var(--background);
+        color: var(--accent);
+    }
 }
 
 body {
@@ -145,8 +148,8 @@ header {
     padding: 8px;
 
     h3 {
-        font-size: 24px;
         color: var(--accent-text);
+        font-size: 24px;
     }
 }
 
@@ -154,8 +157,8 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-inline: 8px;
     margin-bottom: 10em;
+    margin-inline: 8px;
     .article {
         display: flex;
         flex-direction: row;
@@ -185,9 +188,12 @@ header {
             figcaption {
                 padding: 8px;
 
+                h4{
+                    margin: 0;
+                }
                 small {
                     display: block;
-                    margin-top: 12px;
+                    margin-top: 8px;
                 }
             }
         }
@@ -208,9 +214,9 @@ header {
         
         .article {
             flex-direction: column;
-            max-width: 350px;
             margin: auto;
             border: 1px solid var(--border);
+            max-width: 350px;
 
             a {
                 flex-direction: column;
@@ -227,10 +233,6 @@ header {
                 figcaption {
                     padding: 4px;
                     text-align: left;
-
-                    small{
-                        margin-top: 16px;
-                    }
                 }
             }
         }
