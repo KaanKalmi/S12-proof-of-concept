@@ -19,19 +19,52 @@ app.listen(app.get('port'), function () {
 // BASIS ENDPOINTS
 const apiUrl = 'https://fdnd-agency.directus.app/items'
 const imagesData =  await fetchJson(apiUrl + '/fabrique_art_objects/?fields=*,image.height,image.width,image.id')
-console.log(imagesData.data)
+
 
 // ROUTES
-app.get('/', function (request, response) {  
-    response.render('index', {
-        current: '/en', 
-        images: imagesData.data
-    })
-})
+// app.get('/', function (request, response) {  
+//     response.render('index', {
+//         current: '/en', 
+//         images: imagesData.data
+//     })
+// })
 
 app.get('/ar', function (request, response) {  
     response.render('index', {
         current: '/ar', 
         images: imagesData.data        
+    })
+})
+
+app.get('/', function (request, response) { 
+    const images = imagesData.data
+    const page = parseInt(request.query.page)
+    const limit = parseInt(request.query.limit)
+
+    const startIndex = (page - 1) * limit
+    const endIndex = page * limit
+
+    const resultImages = images.slice(startIndex, endIndex)
+    console.log(resultImages)
+
+    const results = {}
+
+    if (endIndex < images.length) {
+        results.next = {
+            page: page + 1,
+            limit: limit
+        }
+    }
+
+    if (startIndex > 0) {
+        results.previous = {
+            page: page - 1,
+            limit: limit
+        }
+    }
+
+    response.render('index', {
+        current: '/en', 
+        images: imagesData.data
     })
 })
