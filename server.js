@@ -23,7 +23,7 @@ app.listen(app.get('port'), function () {
 app.get('/', function(req, res){
  res.render('index', {
    articles: articles,
-   mp3, mp3
+   mp3: mp3
  })
  console.log('if you see this message the page loaded correctly')
  });
