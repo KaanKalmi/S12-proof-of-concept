@@ -22,12 +22,34 @@ const imagesData =  await fetchJson(apiUrl + '/fabrique_art_objects/?fields=*,im
 
 
 // ROUTES
-// app.get('/', function (request, response) {  
-//     response.render('index', {
-//         current: '/en', 
-//         images: imagesData.data
-//     })
-// })
+app.get('/', function (request, response) {  
+    response.render('index', {
+        current: '/en', 
+        images: imagesData.data
+    })
+})
+
+app.post('/more', (request, response) => {   
+     // Ophalen afbeeldingen   
+    const images = imagesData.data 
+    // Shuffelen 
+    function shuffle(array) {    
+        // Shuffle code   
+        for (let i = array.length - 1; i > 0; i--) {      
+            // Random index selecteren     
+            let j = Math.floor(Math.random() * (i + 1));      
+            // Items swappen     
+            [array[i], array[j]] = [array[j], array[i]];   
+        }   
+    }
+    shuffle(images) 
+
+    response.render('index', {     
+        images,
+        current: '/en' 
+    });  
+}) 
+
 
 app.get('/ar', function (request, response) {  
     response.render('index', {
@@ -36,35 +58,35 @@ app.get('/ar', function (request, response) {
     })
 })
 
-app.get('/', function (request, response) { 
-    const images = imagesData.data
-    const page = parseInt(request.query.page)
-    const limit = parseInt(request.query.limit)
+// app.get('/', function (request, response) { 
+//     const images = imagesData.data
+//     const page = parseInt(request.query.page)
+//     const limit = parseInt(request.query.limit)
 
-    const startIndex = (page - 1) * limit
-    const endIndex = page * limit
+//     const startIndex = (page - 1) * limit
+//     const endIndex = page * limit
 
-    const resultImages = images.slice(startIndex, endIndex)
-    console.log(resultImages)
+//     const resultImages = images.slice(startIndex, endIndex)
+//     console.log(resultImages)
 
-    const results = {}
+//     const results = {}
 
-    if (endIndex < images.length) {
-        results.next = {
-            page: page + 1,
-            limit: limit
-        }
-    }
+//     if (endIndex < images.length) {
+//         results.next = {
+//             page: page + 1,
+//             limit: limit
+//         }
+//     }
 
-    if (startIndex > 0) {
-        results.previous = {
-            page: page - 1,
-            limit: limit
-        }
-    }
+//     if (startIndex > 0) {
+//         results.previous = {
+//             page: page - 1,
+//             limit: limit
+//         }
+//     }
 
-    response.render('index', {
-        current: '/en', 
-        images: imagesData.data
-    })
-})
+//     response.render('index', {
+//         current: '/en', 
+//         images: images
+//     })
+// })
