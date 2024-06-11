@@ -16,40 +16,45 @@ app.listen(app.get('port'), function () {
     console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
+
 // BASIS ENDPOINTS
 const apiUrl = 'https://fdnd-agency.directus.app/items'
-const imagesData =  await fetchJson(apiUrl + '/fabrique_art_objects/?fields=*,image.height,image.width,image.id')
+// const imagesData =  await fetchJson(apiUrl + '/fabrique_art_objects/?fields=*,image.height,image.width,image.id')
+let offset = 0 
+const imagesData = await fetchJson(apiUrl + `/fabrique_art_objects/?offset=${offset}&fields=*,image.height,image.width,image.id`) 
 
+// Shuffelen functie 
+function shuffle(array) {       
+    // Fisher-Yates shuffle algorithm
+    for (let i = array.length - 1; i > 0; i--) {      
+        // Random index selecteren     
+        let j = Math.floor(Math.random() * (i + 1));      
+        // Items swappen     
+        [array[i], array[j]] = [array[j], array[i]];   
+    }   
+}
 
 // ROUTES
-app.get('/', function (request, response) {  
+const images = imagesData.data  
+const sliced = images.slice(0, 5)
+
+app.get('/', function (request, response) { 
     response.render('index', {
         current: '/en', 
-        images: imagesData.data
+        images: sliced
     })
 })
 
 app.post('/more', (request, response) => {   
-     // Ophalen afbeeldingen   
-    const images = imagesData.data 
-    // Shuffelen 
-    function shuffle(array) {    
-        // Shuffle code   
-        for (let i = array.length - 1; i > 0; i--) {      
-            // Random index selecteren     
-            let j = Math.floor(Math.random() * (i + 1));      
-            // Items swappen     
-            [array[i], array[j]] = [array[j], array[i]];   
-        }   
-    }
-    shuffle(images) 
+    offset += 3; 
+    shuffle(images)
+    const newSliced = images.slice(sliced, offset)
 
     response.render('index', {     
-        images,
+        images: newSliced,
         current: '/en' 
     });  
 }) 
-
 
 app.get('/ar', function (request, response) {  
     response.render('index', {
