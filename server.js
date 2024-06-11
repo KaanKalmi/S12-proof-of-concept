@@ -20,8 +20,8 @@ app.listen(app.get('port'), function () {
 // BASIS ENDPOINTS
 const apiUrl = 'https://fdnd-agency.directus.app/items'
 // const imagesData =  await fetchJson(apiUrl + '/fabrique_art_objects/?fields=*,image.height,image.width,image.id')
-let offset = 0 
-const imagesData = await fetchJson(apiUrl + `/fabrique_art_objects/?offset=${offset}&fields=*,image.height,image.width,image.id`) 
+
+const imagesData = await fetchJson(apiUrl + `/fabrique_art_objects/?fields=*,image.height,image.width,image.id`) 
 
 // Shuffelen functie 
 function shuffle(array) {       
@@ -35,10 +35,12 @@ function shuffle(array) {
 }
 
 // ROUTES
+let currentIndex = 0
+let offset = 0
 const images = imagesData.data  
 const sliced = images.slice(0, 5)
 
-app.get('/', function (request, response) { 
+app.get('/', function (request, response) {
     response.render('index', {
         current: '/en', 
         images: sliced
@@ -46,26 +48,47 @@ app.get('/', function (request, response) {
 })
 
 app.post('/more', (request, response) => {   
-    offset += 3; 
-    shuffle(images.slice(sliced, offset))
-    const allImages = images.slice(sliced, offset)
+    offset += 5 
+    shuffle(images.slice(currentIndex, offset += 5))
+    const sliced = images.slice(currentIndex, offset)
+
+    if(offset >= images.length) {  
+        offset = 0 
+    } 
 
     response.render('index', {     
-        images: allImages,
+        images: sliced,
         current: '/en' 
-    });  
-}) 
+    })  
+})
 
-
-// // Globale variabele 
-// let allImages;  
+// let allImages, currentIndex = 0;  
 // // GET 
-// allImages = await api.getImages();
-//  shuffle(allImages); 
-//  const sliced = allImages.slice(0, 5);  
-//  // POST 
-//  shuffle(allImages);  
-//   const sliced = allImages.slice(5, 10);  
+// allImages = await api.getImages();  
+// // POST 
+// shuffle(allImages); 
+// const sliced = allImages.slice(currentIndex, currentIndex+5);   
+// currentIndex += 5; 
+// if(currentIndex >= allImages.length) {   
+//     urrentIndex = 0; 
+// } 
+
+
+// app.post('/more', (request, response) => {  
+//     offset += 5
+//     shuffle(images.slice(sliced, offset))
+//     const allImages = images.slice(sliced, offset)
+//     // const allImages = images.slice(sliced, offset)
+
+//     if(currentIndex >= allImages.length) {  
+//         currentIndex = 0; 
+//     } 
+
+//     response.render('index', {     
+//         images: allImages,
+//         current: '/en' 
+//     });  
+// })   
 
 app.get('/ar', function (request, response) {  
     response.render('index', {
