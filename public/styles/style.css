@@ -4,24 +4,24 @@
 }
 
 @media (prefers-color-scheme: light) {
-:root {
-    --accent: #FFD200;
-    --accent-light:#000;
-    --background: #F2F1F0;
-    --text: #000000;
-    --accent-text: #000;
-    --font: 'PJS', helvetica, arial, serif;
-    --border:#00000025;
-}
+    :root {
+        --accent: #FFD200;
+        --accent-light: #000;
+        --background: #F2F1F0;
+        --text: #000000;
+        --accent-text: #000;
+        --font: 'PJS', helvetica, arial, serif;
+        --border: #00000025;
+    }
 
-body{
-    accent-color: var(--accent-light);
-}
+    body {
+        accent-color: var(--accent-light);
+    }
 
-#play-pause-button{
-    background-color: var(--accent-light);
-    color: var(--accent);
-}
+    #play-pause-button {
+        background-color: var(--accent-light);
+        color: var(--accent);
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,14 +31,14 @@ body{
         --text: #F2F1F0;
         --accent-text: #000;
         --font: 'PJS', helvetica, arial, serif;
-        --border:#ffd00025;
+        --border: #ffd00025;
     }
 
-    body{
+    body {
         accent-color: var(--background);
     }
 
-     #play-pause-button{
+    #play-pause-button {
         background-color: var(--background);
         color: var(--accent);
     }
@@ -159,6 +159,7 @@ header {
     flex-wrap: wrap;
     margin-bottom: 10em;
     margin-inline: 8px;
+
     .article {
         display: flex;
         flex-direction: row;
@@ -188,9 +189,10 @@ header {
             figcaption {
                 padding: 8px;
 
-                h4{
+                h4 {
                     margin: 0;
                 }
+
                 small {
                     display: block;
                     margin-top: 8px;
@@ -201,7 +203,7 @@ header {
 }
 
 @media only screen and (min-width: 750px) {
-    .banner{
+    .banner {
         h3 {
             margin-left: 120px;
         }
@@ -211,7 +213,7 @@ header {
         display: grid;
         grid-template-columns: 1fr 1fr;
         row-gap: 16px;
-        
+
         .article {
             flex-direction: column;
             margin: auto;
@@ -221,7 +223,7 @@ header {
             a {
                 flex-direction: column;
                 max-width: 100%;
-                height: 300px;
+                height: 310px;
 
                 figure {
 
@@ -230,6 +232,7 @@ header {
                         height: 225px;
                     }
                 }
+
                 figcaption {
                     padding: 4px;
                     text-align: left;
@@ -240,38 +243,45 @@ header {
 }
 
 @media only screen and (min-width: 1000px) {
-    .audio-player{
-        height: 8vh;
+    .audio-player {
+        height: 6vh;
 
-    .play-btn-container {
-        left: 48%;
+        .play-btn-container {
+            left: 48%;
+        }
+
+        .controls {
+            right: 26px;
+            bottom: 25px;
+            transform: rotate(0deg);
+
+            #volume-control {
+                width: 100px;
+                height: 20px;
+            }
+        }
     }
-    .controls{
-        transform: rotate(0deg);
-        right: 26px;
-        bottom: 43px;
-    #volume-control {
-        width: 100px;
-        height: 20px;
-    }
-}
-}
+
     .news {
         grid-template-columns: repeat(4, 1fr);
-        column-gap: 16px;
-        .article:nth-child(1){
+        column-gap: 12px;
+
+        .article:nth-child(1) {
             grid-row: 1 / 3;
             grid-column: 1 / 4;
-            margin: 0;
-            max-width: 100%;
+            margin: auto;
+            max-width: 90%;
             height: 100%;
+            border: 1px solid var(--border);
+            a{
 
-            a figure{
+            figure {
                 img {
                     width: 100%;
                     height: 100%;
                 }
             }
+        }
         }
     }
 }
