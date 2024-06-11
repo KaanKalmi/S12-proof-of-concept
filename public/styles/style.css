@@ -141,7 +141,7 @@ header {
 }
 
 .banner {
-    clip-path: polygon(0 0, 95% 0, 75% 100%, 0% 100%);
+    clip-path: polygon(0 0, 95% 0, 85% 100%, 0% 100%);
     margin-top: 24px;
     margin-bottom: 12px;
     background: var(--accent);
