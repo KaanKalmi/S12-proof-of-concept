@@ -47,14 +47,25 @@ app.get('/', function (request, response) {
 
 app.post('/more', (request, response) => {   
     offset += 3; 
-    shuffle(images)
-    const newSliced = images.slice(sliced, offset)
+    shuffle(images.slice(sliced, offset))
+    const allImages = images.slice(sliced, offset)
 
     response.render('index', {     
-        images: newSliced,
+        images: allImages,
         current: '/en' 
     });  
 }) 
+
+
+// // Globale variabele 
+// let allImages;  
+// // GET 
+// allImages = await api.getImages();
+//  shuffle(allImages); 
+//  const sliced = allImages.slice(0, 5);  
+//  // POST 
+//  shuffle(allImages);  
+//   const sliced = allImages.slice(5, 10);  
 
 app.get('/ar', function (request, response) {  
     response.render('index', {
@@ -62,6 +73,8 @@ app.get('/ar', function (request, response) {
         images: imagesData.data        
     })
 })
+
+
 
 // app.get('/', function (request, response) { 
 //     const images = imagesData.data
