@@ -2,8 +2,9 @@ const audio = document.getElementById("audio");
 const playPauseButton = document.getElementById("play-pause-button");
 const volumeControl = document.getElementById("volume-control");
 const currentTimeDisplay = document.getElementById("current-time");
-
 let isPlaying = false;
+
+audio.style.display='none';
 
 playPauseButton.addEventListener("click", () => {
     if (isPlaying) {
