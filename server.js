@@ -35,10 +35,13 @@ function shuffle(array) {
 }
 
 // ROUTES
+const allImages = app.locals.storage = []; 
 let currentIndex = 0
 let offset = 0
 const images = imagesData.data  
 const sliced = images.slice(0, 5)
+// offset.push(...allImages) // ... betekent spreaden dus over alles
+// console.log(allImages)
 
 app.get('/', function (request, response) {
     response.render('index', {
@@ -47,48 +50,21 @@ app.get('/', function (request, response) {
     })
 })
 
+
 app.post('/more', (request, response) => {   
     offset += 5 
     shuffle(images.slice(currentIndex, offset += 5))
     const sliced = images.slice(currentIndex, offset)
 
-    if(offset >= images.length) {  
-        offset = 0 
+    if(offset >= images.length) { 
+        
     } 
 
     response.render('index', {     
         images: sliced,
         current: '/en' 
     })  
-})
-
-// let allImages, currentIndex = 0;  
-// // GET 
-// allImages = await api.getImages();  
-// // POST 
-// shuffle(allImages); 
-// const sliced = allImages.slice(currentIndex, currentIndex+5);   
-// currentIndex += 5; 
-// if(currentIndex >= allImages.length) {   
-//     urrentIndex = 0; 
-// } 
-
-
-// app.post('/more', (request, response) => {  
-//     offset += 5
-//     shuffle(images.slice(sliced, offset))
-//     const allImages = images.slice(sliced, offset)
-//     // const allImages = images.slice(sliced, offset)
-
-//     if(currentIndex >= allImages.length) {  
-//         currentIndex = 0; 
-//     } 
-
-//     response.render('index', {     
-//         images: allImages,
-//         current: '/en' 
-//     });  
-// })   
+})  
 
 app.get('/ar', function (request, response) {  
     response.render('index', {
@@ -96,38 +72,3 @@ app.get('/ar', function (request, response) {
         images: imagesData.data        
     })
 })
-
-
-
-// app.get('/', function (request, response) { 
-//     const images = imagesData.data
-//     const page = parseInt(request.query.page)
-//     const limit = parseInt(request.query.limit)
-
-//     const startIndex = (page - 1) * limit
-//     const endIndex = page * limit
-
-//     const resultImages = images.slice(startIndex, endIndex)
-//     console.log(resultImages)
-
-//     const results = {}
-
-//     if (endIndex < images.length) {
-//         results.next = {
-//             page: page + 1,
-//             limit: limit
-//         }
-//     }
-
-//     if (startIndex > 0) {
-//         results.previous = {
-//             page: page - 1,
-//             limit: limit
-//         }
-//     }
-
-//     response.render('index', {
-//         current: '/en', 
-//         images: images
-//     })
-// })
