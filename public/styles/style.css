@@ -78,7 +78,7 @@ header {
     background-color: var(--accent);
     padding-top: 24px;
     width: 100vw;
-    height: 10vh;
+    height: 8vh;
     color: var(--accent-text);
 
     h2 {
@@ -209,9 +209,12 @@ header {
 
 @media (min-width: 750px) {
     .audio-player{
+        .play-btn-container {
+            left: 47%;
+        }
     .controls {
-        right: 50px;
-        bottom: 50px;
+        right: 30px;
+        bottom: 35px;
     
         #volume-control {
             margin-block: 6px;
@@ -270,7 +273,6 @@ header {
     }
 }
     .audio-player {
-        height: 6vh;
 
         .play-btn-container {
             left: 48%;
