@@ -271,6 +271,9 @@ header {
             bottom: 25px;
             transform: rotate(0deg);
 
+            img{
+                transform: rotate(0deg);
+            }
             #volume-control {
                 width: 100px;
                 height: 20px;
