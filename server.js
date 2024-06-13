@@ -39,17 +39,16 @@ const allImages = app.locals.storage = [];
 let currentIndex = 0
 let offset = 0
 const images = imagesData.data  
-const sliced = images.slice(0, 5)
+const sliced = images.slice(0, 22)
 // offset.push(...allImages) // ... betekent spreaden dus over alles
 // console.log(allImages)
 
 app.get('/', function (request, response) {
     response.render('index', {
         current: '/en', 
-        images: sliced
+        images
     })
 })
-
 
 app.post('/more', (request, response) => {   
     offset += 5 
@@ -69,6 +68,6 @@ app.post('/more', (request, response) => {
 app.get('/ar', function (request, response) {  
     response.render('index', {
         current: '/ar', 
-        images: imagesData.data        
+        images       
     })
 })
