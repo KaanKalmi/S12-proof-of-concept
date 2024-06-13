@@ -113,9 +113,14 @@ header {
         align-items: end;
         transform: rotate(-90deg);
 
+        img{
+            transform: rotate(90deg);
+        }
         #volume-control {
             width: 80px;
             height: 15px;
+            z-index: -5;
+            background-color: var(--accent);
         }
     }
 
