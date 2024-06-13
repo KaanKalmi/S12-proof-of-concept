@@ -108,19 +108,15 @@ header {
     .controls {
         display: flex;
         position: absolute;
-        right: -10px;
-        bottom: 50px;
+        right: 20px;
+        bottom: 30px;
         justify-content: end;
         align-items: end;
-        transform: rotate(-90deg);
-
-        img{
-            transform: rotate(90deg);
-        }
+    
         #volume-control {
             width: 80px;
             height: 15px;
-            z-index: -5;
+            margin-block: 8px;
             background-color: var(--accent);
         }
     }
@@ -159,6 +155,9 @@ header {
     }
 }
 
+.news .article:hover{
+    background-color: var(--border);
+}
 .news {
     display: flex;
     flex-direction: row;
@@ -209,6 +208,16 @@ header {
 }
 
 @media (min-width: 750px) {
+    .audio-player{
+    .controls {
+        right: 50px;
+        bottom: 50px;
+    
+        #volume-control {
+            margin-block: 8px;
+        }
+    }
+    }
     .banner {
         h3 {
             margin-left: 120px;
@@ -299,7 +308,7 @@ header {
             height: 96%;
             border: 1px solid var(--border);
             a{
-
+                height: 100%;
             figure {
                 img {
                     width: 100%;
