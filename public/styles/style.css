@@ -68,7 +68,6 @@ header {
         width: 60px;
         height: 100px;
     }
-
 }
 
 .audio-player {
@@ -158,6 +157,7 @@ header {
 .news .article:hover{
     background-color: var(--border);
 }
+
 .news {
     display: flex;
     flex-direction: row;
@@ -208,20 +208,23 @@ header {
 }
 
 @media (min-width: 750px) {
-    .audio-player{
+    .audio-player {
+        
         .play-btn-container {
             left: 47%;
         }
-    .controls {
-        right: 30px;
-        bottom: 35px;
-    
-        #volume-control {
-            margin-block: 6px;
+        
+        .controls {
+            right: 30px;
+            bottom: 35px;
+        
+            #volume-control {
+                margin-block: 6px;
+            }
         }
     }
-    }
     .banner {
+        
         h3 {
             margin-left: 120px;
         }
@@ -262,16 +265,19 @@ header {
 
 @media (min-width: 1000px) {
     header {
-    img{
-        margin-left: 32px;
-        margin-top: 8px;
-        height: 10vh;
-        width: 6vh;
+        
+        img {
+            margin-left: 32px;
+            margin-top: 8px;
+            height: 10vh;
+            width: 6vh;
+        }
+        
+        h1{
+            margin-left: 80px;
+        }
     }
-    h1{
-        margin-left: 80px;
-    }
-}
+    
     .audio-player {
 
         .play-btn-container {
@@ -286,6 +292,7 @@ header {
             img{
                 transform: rotate(0deg);
             }
+            
             #volume-control {
                 width: 100px;
                 height: 20px;
@@ -297,6 +304,7 @@ header {
         margin-top: 36px;
         margin-bottom: 32px;
     }
+    
     .news {
         margin-top: 24px;
         grid-template-columns: repeat(4, 1fr);
@@ -309,18 +317,22 @@ header {
             max-width: 90%;
             height: 96%;
             border: 1px solid var(--border);
-            a{
+            
+            a {
                 height: 100%;
-            figure {
-                img {
-                    width: 100%;
-                    height: 100%;
+                
+                figure {
+                    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
         }
+        
+        .article:nth-child(1), .article:nth-child(3) {
+            margin-bottom: 24px;
+        }
     }
-    .article:nth-child(1), .article:nth-child(3) {
-        margin-bottom: 24px;
-    }
-}
 }
