@@ -1,3 +1,13 @@
+// Articles inladen met interval
+setInterval(function() {
+    fetch('/articles')
+        .then(response => response.json())
+        .then(articles => {
+            console.log(articles); // Log de artikels in console, zodat ik weet dat het uberhaupt update
+        });
+}, 30 * 60 * 1000); // update de artikels elke 30 minuten
+
+// radio
 const audio = document.getElementById("audio");
 const playPauseButton = document.getElementById("play-pause-button");
 const volumeControl = document.getElementById("volume-control");

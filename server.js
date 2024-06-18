@@ -18,12 +18,21 @@ app.listen(app.get('port'), function () {
  console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
+// GET ROUTES
+// maak route aan met /articles en haal de data op van de api, hierdoor kan ik de data herladen op de pagina zonder de server te herstarten
+app.get('/articles', async function(req, res) {
+  const articles = await fetchJson('https://api.mobile.bnr.nl/v1/articles');
+  res.json(articles);
+})
 
-// GET route naar index pagina met als meegegeven data de articles van BNR
-app.get('/', function(req, res){
- res.render('index', {
-   articles: articles,
-   mp3: mp3
- })
- console.log('if you see this message the page loaded correctly')
- });
+// maak route aan waarbij de data van de route hierboven word opgehaald, laad vervolgens de index in met de 2 variabelen.
+app.get('/', async function(req, res){
+  const response = await fetch('http://localhost:' + app.get('port') + '/articles');
+  const articles = await response.json();
+
+  res.render('index', {
+      articles: articles,
+      mp3: mp3
+  })
+  console.log('if you see this message the page loaded correctly')
+});
