@@ -54,4 +54,4 @@ Volg deze stappen om het project lokaal op te zetten:
 - [Javascript tutorial](https://learnjavascript.online/)
 
 ## Licentie
-This project is licensed under the terms of the MIT license.
+This project is licensed under the terms of the [MIT license](https://github.com/KaanKalmi/S12-proof-of-concept/blob/main/LICENSE).
