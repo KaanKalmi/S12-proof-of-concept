@@ -50,8 +50,8 @@ Volg deze stappen om het project lokaal op te zetten:
    ```
 
 ## Bronnen
-- [Documentatie]([https://link-naar-documentatie](https://github.com/KaanKalmi/S12-proof-of-concept/wiki))
-- [Javascript tutorial]([https://link-naar-tutorials](https://learnjavascript.online/))
+- [Documentatie](https://github.com/KaanKalmi/S12-proof-of-concept/wiki)
+- [Javascript tutorial](https://learnjavascript.online/)
 
 ## Licentie
 This project is licensed under the terms of the MIT license.
