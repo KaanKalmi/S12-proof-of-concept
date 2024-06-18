@@ -41,3 +41,8 @@ audio.addEventListener("timeupdate", () => {
 
     currentTimeDisplay.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`;
 });
+
+document.querySelector('#volume-button').addEventListener('click', function() {
+    var volumeControlLabel = document.querySelector('#volume-control-label');
+    volumeControlLabel.style.display = volumeControlLabel.style.display === 'block' ? 'none' : 'block';
+});

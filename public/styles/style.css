@@ -115,11 +115,27 @@ header {
         justify-content: end;
         align-items: end;
     
-        #volume-control {
-            width: 80px;
-            height: 15px;
-            margin-block: 8px;
+        #volume-button{
+            border: 0;
+            background:none;
+        }
+
+        #volume-control-label {
             background-color: var(--accent);
+            height: 20px;
+            width: 140px;
+            position: absolute;
+            bottom: 135px;
+            left: -52px;
+            transform: translateY(100%) rotate(-90deg);
+            transition: all 0.3s ease-in-out;
+            display: none;
+        }
+        
+        #volume-button:active + #volume-control-label,
+        #volume-button:focus + #volume-control-label,
+        #volume-control:focus-within {
+            display: block;
         }
     }
 
