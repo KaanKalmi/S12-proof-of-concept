@@ -236,10 +236,6 @@ header {
         .controls {
             right: 30px;
             bottom: 35px;
-        
-            #volume-control {
-                margin-block: 6px;
-            }
         }
     }
     .banner {
@@ -310,11 +306,6 @@ header {
 
             img{
                 transform: rotate(0deg);
-            }
-            
-            #volume-control {
-                width: 100px;
-                height: 20px;
             }
         }
     }
