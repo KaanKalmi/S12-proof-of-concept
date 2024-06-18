@@ -4,6 +4,8 @@ const volumeControl = document.getElementById("volume-control");
 const currentTimeDisplay = document.getElementById("current-time");
 let isPlaying = false;
 
+const visibilityToggle = document.getElementsByClassName("hidden")[0];
+visibilityToggle.style.display= "block";
 audio.style.display='none';
 
 playPauseButton.addEventListener("click", () => {
