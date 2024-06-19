@@ -13,15 +13,8 @@
         --font: 'PJS', helvetica, arial, serif;
         --border: #00000025;
     }
-
-    body {
-        accent-color: var(--accent-light);
-    }
-
-    #play-pause-button {
-        background-color: var(--accent-light);
-        color: var(--accent);
-    }
+    body { accent-color: var(--accent-light); }
+    #play-pause-button { background-color: var(--accent-light); color: var(--accent); }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,17 +26,9 @@
         --font: 'PJS', helvetica, arial, serif;
         --border: #ffd00025;
     }
-
-    body {
-        accent-color: var(--background);
-    }
-
-    #play-pause-button {
-        background-color: var(--background);
-        color: var(--accent);
-    }
+    body { accent-color: var(--background); }
+    #play-pause-button { background-color: var(--background); color: var(--accent); }
 }
-
 body {
     box-sizing: border-box;
     margin: 0;
@@ -51,17 +36,12 @@ body {
     color: var(--text);
     font-family: var(--font);
 }
-
 h1 {
     margin-left: 24px;
     margin-block: auto;
     text-align: center;
 }
-
-header {
-    display: flex;
-    flex-direction: row;
-
+header { display: flex; flex-direction: row;
     img {
         display: inline-block;
         padding: 8px;
@@ -69,10 +49,7 @@ header {
         height: 100px;
     }
 }
-
-.hidden{
-    display: none;
-}
+.hidden{ display: none; }
 .audio-player {
     position: fixed;
     bottom: 0;
@@ -82,7 +59,6 @@ header {
     width: 100vw;
     height: 8vh;
     color: var(--accent-text);
-
     h2 {
         margin-top: -20px;
         margin-bottom: 0;
@@ -90,14 +66,12 @@ header {
         font-size: 18px;
         text-align: left;
     }
-
     .play-btn-container {
         position: absolute;
         bottom: 20px;
         left: 42%;
         margin: auto;
     }
-
     #play-pause-button {
         animation: pulse 4s 1s infinite linear;
         cursor: pointer;
@@ -106,7 +80,6 @@ header {
         border-radius: 1000px;
         padding: 12px;
     }
-
     .controls {
         display: flex;
         position: absolute;
@@ -114,12 +87,7 @@ header {
         bottom: 30px;
         justify-content: end;
         align-items: end;
-    
-        #volume-button{
-            border: 0;
-            background:none;
-        }
-
+        #volume-button{ border: 0; background:none; }
         #volume-control-label {
             border-radius: 0 8px 8px 0;
             background-color: var(--accent);
@@ -132,66 +100,39 @@ header {
             transition: all 0.3s ease-in-out;
             display: none;
         }
-        
-        #volume-button:active + #volume-control-label,
-        #volume-button:focus + #volume-control-label,
-        #volume-control:focus-within {
-            display: block;
-        }
+        #volume-button:active + #volume-control-label, #volume-button:focus + #volume-control-label, #volume-control:focus-within { display: block; }
     }
-
     #current-time {
         position: absolute;
         bottom: 10px;
         margin-left: 10px;
     }
 }
-
-@keyframes pulse {
-
-    0%,
-    50%,
-    100% {
-        transform: scale(1);
-    }
-
-    25%,
-    75% {
-        transform: scale(1.1);
-    }
-}
-
+@keyframes pulse { 0%, 50%, 100% { transform: scale(1); } 25%, 75% { transform: scale(1.1); } }
 .banner {
     clip-path: polygon(0 0, 95% 0, 85% 100%, 0% 100%);
     margin-top: 24px;
     margin-bottom: 12px;
     background: var(--accent);
     padding: 8px;
-
     h3 {
         color: var(--accent-text);
         font-size: 24px;
     }
 }
-
-.news .article:hover{
-    background-color: var(--border);
-}
-
+.news .article:hover{ background-color: var(--border); }
 .news {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 10em;
     margin-inline: 8px;
-
     .article {
         display: flex;
         flex-direction: row;
         margin: 8px;
         border-block: 1px solid var(--border);
         max-width: 450px;
-
         a {
             display: flex;
             flex-direction: row;
@@ -199,10 +140,7 @@ header {
             height: 125px;
             color: var(--text);
             text-decoration: none;
-
-            figure {
-                margin: 0;
-
+            figure { margin: 0;
                 img {
                     image-rendering: optimizeQuality;
                     width: 125px;
@@ -210,18 +148,9 @@ header {
                     object-fit: cover;
                 }
             }
-
-            figcaption {
-                padding: 8px;
-
-                h4 {
-                    margin: 0;
-                }
-
-                small {
-                    display: block;
-                    margin-top: 8px;
-                }
+            figcaption { padding: 8px;
+                h4 { margin: 0; }
+                small { display: block; margin-top: 8px; }
             }
         }
     }
@@ -229,51 +158,29 @@ header {
 
 @media (min-width: 750px) {
     .audio-player {
-        
-        .play-btn-container {
-            left: 47%;
-        }
-        
-        .controls {
-            right: 30px;
-            bottom: 35px;
-        }
+        .play-btn-container { left: 47%; }
+        .controls { right: 30px; bottom: 35px; }
     }
     .banner {
-        
-        h3 {
-            margin-left: 120px;
-        }
+        h3 { margin-left: 120px; }
     }
-
     .news {
         display: grid;
         grid-template-columns: 1fr 1fr;
         row-gap: 16px;
-
         .article {
             flex-direction: column;
             margin: auto;
             border: 1px solid var(--border);
             max-width: 350px;
-
             a {
                 flex-direction: column;
                 max-width: 100%;
                 height: 350px;
-
                 figure {
-
-                    img {
-                        width: 100%;
-                        height: 225px;
-                    }
+                    img { width: 100%; height: 225px; }
                 }
-
-                figcaption {
-                    padding: 4px;
-                    text-align: left;
-                }
+                figcaption { padding: 4px; text-align: left; }
             }
         }
     }
@@ -281,46 +188,28 @@ header {
 
 @media (min-width: 1000px) {
     header {
-        
         img {
             margin-left: 32px;
             margin-top: 8px;
             height: 10vh;
             width: 6vh;
         }
-        
-        h1{
-            margin-left: 80px;
-        }
+        h1{ margin-left: 80px; }
     }
-    
     .audio-player {
-
-        .play-btn-container {
-            left: 48%;
-        }
-
+        .play-btn-container { left: 48%; }
         .controls {
             right: 26px;
             bottom: 25px;
             transform: rotate(0deg);
-
-            img{
-                transform: rotate(0deg);
-            }
+            img{ transform: rotate(0deg); }
         }
     }
-
-    .banner{
-        margin-top: 36px;
-        margin-bottom: 32px;
-    }
-    
+    .banner{ margin-top: 36px; margin-bottom: 32px; }
     .news {
         margin-top: 24px;
         grid-template-columns: repeat(4, 1fr);
         column-gap: 12px;
-
         .article:nth-child(1) {
             grid-row: 1 / 3;
             grid-column: 1 / 4;
@@ -328,22 +217,12 @@ header {
             max-width: 90%;
             height: 96%;
             border: 1px solid var(--border);
-            
-            a {
-                height: 100%;
-                
+            a { height: 100%;
                 figure {
-                    
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
+                    img { width: 100%; height: 100%; }
                 }
             }
         }
-        
-        .article:nth-child(1), .article:nth-child(3) {
-            margin-bottom: 24px;
-        }
+        .article:nth-child(1), .article:nth-child(3) { margin-bottom: 24px; }
     }
 }
