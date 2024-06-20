@@ -25,6 +25,9 @@ Lijst hier de belangrijkste kenmerken van je project op:
 - Light/Dark mode
 - High performance
 - Dynamische pagina`s
+- Responsive images
+- Client side fetching
+- Refactoring
 
 ## Installatie
 Volg deze stappen om het project lokaal op te zetten:
