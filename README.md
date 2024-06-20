@@ -13,8 +13,8 @@
 In sprint 12 heb ik voor BNR een single page application gemaakt waarin je kan luisteren naar de live radio dat muziek afspeelt en ook nog is de laatste nieuws artikelen kan lezen.
 
 ## Gebruik
-Je kan het project als basis gebruiken voor verdere development, de core functionaliteit zit er in (de radio werkt alleen niet correct, maar dit kan ik niet fixen).
-Het bevat dus alle 50 recente artikelen van BNR die elke 30 minuten een refresh doet zonder dat de gebruiker hier last van heeft. Ook kan je gerust luisteren naar de geintegreerde radio.
+Je kan het project als basis gebruiken voor verdere development, de core functionaliteit zit er in, het bevat dus alle 50 recente artikelen van BNR die elke 30 minuten een refreshed word zonder dat de gebruiker hier last van heeft.
+Ook kan je gerust luisteren naar de geintegreerde radio.
 
 ## Kenmerken
 Lijst hier de belangrijkste kenmerken van je project op:
