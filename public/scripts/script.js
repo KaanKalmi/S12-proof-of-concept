@@ -3,9 +3,34 @@ setInterval(function() {
     fetch('/articles')
         .then(response => response.json())
         .then(articles => {
-            console.log(articles); // Log de artikels in console, zodat ik weet dat het uberhaupt update
+            const articlesContainer = document.getElementsByClassName('news');
+            if (articlesContainer.length > 0) {
+                while (articlesContainer[0].firstChild) {
+                    articlesContainer[0].removeChild(articlesContainer[0].firstChild);
+                }
+                articles.forEach(article => {
+                    const articleElement = document.createElement('article');
+                    articleElement.className = 'article';
+                    articleElement.innerHTML = `
+                        <a href="${article.shareURL}" target="_blank">
+                        <figure>
+                            <img src="${article.photo.URL}" alt="" height="125" width="125"
+                                 srcset="${article.photo.URL}?height=125&width=125" type="image/avif"
+                                 srcset="${article.photo.URL}?height=125&width=125" type="image/webp">
+                        </figure>
+                        <figcaption>
+                            <h4> ${article.title} </h4>
+                            <small> ${article.author} </small>
+                        </figcaption>
+                    </a>
+                    `;
+                    articlesContainer[0].appendChild(articleElement);
+                });
+            } else {
+                console.error('No .news container found');
+            }
         });
-}, 30 * 60 * 1000); // update de artikels elke 30 minuten
+}, 30 * 60 * 1000 );
 
 // radio
 const audio = document.getElementById("audio");
